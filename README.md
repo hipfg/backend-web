@@ -12,7 +12,7 @@
 
 ## Execução
 
-- npm start
+- npm serve
 
 ## Endpoints
 
