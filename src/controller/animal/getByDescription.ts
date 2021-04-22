@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
 import animalService from '../../services/animal.service';
 
-export default async function getByClass(req:Request, res:Response) {
+export default async function getByDescription(req:Request, res:Response) {
   try {
-    const animal = await animalService.getByClass(req.params.class);
+    const animal = await animalService.getByDescription(req.params.description);
 
     if(!animal) {
-      return res.status(404).json({message: 'Classe não encontrada'})
+      return res.status(404).json({message: 'Descrição não encontrada'})
     }
 
     return res.json(animal);

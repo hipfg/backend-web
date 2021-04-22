@@ -13,6 +13,18 @@ const getByClassSchema = {
   }),
 };
 
+const getByGroupSchema = {
+  [Segments.PARAMS]: Joi.object<IAnimal>().keys({
+    group: Joi.string().required(),
+  }),
+};
+
+const getByDescriptionSchema = {
+  [Segments.PARAMS]: Joi.object<IAnimal>().keys({
+    description: Joi.string().required(),
+  }),
+};
+
 const postSchema = {
   [Segments.BODY]: Joi.object<IAnimal>().keys({
     description: Joi.string().required(),
@@ -41,6 +53,8 @@ const deleteByIdSchema = {
 export default {
   getByIdSchema,
   getByClassSchema,
+  getByGroupSchema,
+  getByDescriptionSchema,
   postSchema,
   updateByIdSchema,
   deleteByIdSchema,

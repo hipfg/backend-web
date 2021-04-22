@@ -22,6 +22,20 @@ async function getByClass(className: string) {
     return animals;
 }
 
+async function getByGroup(group: string) {
+  const animals = await db<IAnimal>('animal')
+    .select('*').where('group', group);
+
+    return animals;
+}
+
+async function getByDescription(description: string) {
+  const animals = await db<IAnimal>('animal')
+    .select('*').where('description', description);
+
+    return animals;
+}
+
 async function insert(animal: IAnimal) {
   await db<IAnimal>('animal').insert(animal);
 }
@@ -38,6 +52,8 @@ export default {
   getAll,
   getById,
   getByClass,
+  getByGroup,
+  getByDescription,
   insert,
   update,
   remove
