@@ -27,7 +27,7 @@
 - /animal
 
 ## PUT
-- animal/id
+- /animal/id
 
 ## DELETE 
-- animal/id
+- /animal/id
